@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>axios exercise</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+</head>
+<body>
+    <div class="container d-flex justify-content-center min-vh-100 align-items-center">
+        <div class="card" style="width: 30rem;">
+            <div class="card-body">
+                <h2 class="card-title px-2 mb-5">Lets find something for you to do✌️</h2>
+                <form action="/" method="POST" class="form row g-3 mb-2">
+                    <div class="col-auto">
+                        <select name="type" class="form-select" aria-label="Default select example">
+                            <option selected>Random type</option>
+                            <option value="education">Education</option>
+                            <option value="charity">Charity</option>
+                            <option value="recreational">Recreational</option>
+                            <option value="relaxation">Relaxation</option>
+                            <option value="busywork">Busywork</option>
+                            <option value="social">Social</option>
+                            <option value="diy">DIY</option>
+                            <option value="music">Music</option>
+                          </select>
+                    </div>
+                    <div class="col-auto">
+                        <select name="participants" class="form-select" aria-label="Default select example">
+                            <option selected>Any number of people</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="3">4</option>
+                          </select>
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" class="form-submit btn btn-light" >Go</button>
+                    </div>
+                </form>
+                <% if (locals.data) { %>
+                    <div class="card mt-3">
+                        <div class="card-body">
+                            <h4>
+                                <%= data.activity %>
+                            </h4>
+                            <div class="d-flex justify-content-between mt-5">
+                                <p><%= data.type %></p>
+                                <p>participants: <%= data.participants %></p>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+                <% if (locals.error) { %>
+                    <p class="text-center">
+                        <%= error %>
+                    </p>
+                    <% } %>
+            </div>
+    
+        </div>
+    </div>
+    
+    
+</body>
+</html>
